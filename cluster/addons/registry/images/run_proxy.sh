@@ -30,4 +30,4 @@ while ! host "$REGISTRY_HOST" &>/dev/null; do
 done
 
 printf "starting proxy\n"
-exec haproxy -f /proxy.conf "$@"
+exec haproxy -d -f /proxy.conf "$@"

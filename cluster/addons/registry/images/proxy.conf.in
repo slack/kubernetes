@@ -1,8 +1,11 @@
 global
   maxconn 1024
+  debug
 
 defaults
   mode http
+  log global
+  option httplog
   retries 3
   option redispatch
   timeout client 1s
@@ -10,6 +13,7 @@ defaults
   timeout connect 5s
 
 frontend forwarder
+  log global
   bind *:%FWDPORT%
   default_backend registry
 
